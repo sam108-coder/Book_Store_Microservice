@@ -47,3 +47,5 @@ jobs:
         run: |
           ./mvnw spring-boot:build-image -DskipTests
           docker push ${{ secrets.DOCKER_USERNAME }}/bookstore-catalog-service
+          echo "Pushing the image $DOCKER_IMAGE_NAME to Docker Hub..."
+          docker push $DOCKER_IMAGE_NAME
