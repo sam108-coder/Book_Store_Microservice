@@ -9,11 +9,16 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.jdbc.Sql;
 
-@DataJpaTest(
+/*@DataJpaTest(
         properties = {
             "spring.test.database.replace=none",
             "spring.database.url=jdbc:tc:postgresql:16-alpine:///db",
-        })
+        })*/
+@SpringBootTest
+@TestPropertySource(properties = {
+        "spring.test.database.replace=none",
+        "spring.datasource.url=jdbc:tc:postgresql:16-alpine:///db"
+})
 // @Import(ContainersConfig.class)
 @Sql("/test-data.sql")
 class ProductRepositoryTest {
