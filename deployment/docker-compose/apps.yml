@@ -1,7 +1,7 @@
 name: 'spring-boot-microservices-course'
 services:
   catalog-service:
-    image: sammykumar/bookstore-catalog-service
+    image: sammy108/bookstore-catalog-service
     container_name: catalog-service
     environment:
       - SPRING_PROFILES_ACTIVE=docker
